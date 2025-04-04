@@ -1,6 +1,6 @@
 {
     "name": "biochemical-calculator",
-    "homepage": "https://learnmicrobes.github.io/learnmicrobesv2",
+    "homepage": ".",
     "version": "1.0.0",
     "private": true,
     "dependencies": {
