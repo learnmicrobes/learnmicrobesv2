@@ -1,0 +1,748 @@
+/* General Styles */
+:root {
+    --primary-color: #2c7873;
+    --secondary-color: #6fb98f;
+    --accent-color: #ff9a3c;
+    --light-color: #f4f9f4;
+    --dark-color: #2c3e50;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin: 0 0 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 0.3rem;
+}
+
+/* Form Styles */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.test-category {
+    background: rgba(111, 185, 143, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+}
+
+label:hover {
+    color: var(--primary-color);
+}
+
+/* Custom Round Checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:hover {
+    border-color: var(--secondary-color);
+}
+
+input[type="checkbox"]:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.button-group {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.identify-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.identify-btn:hover {
+    background: #235f5a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reset-btn {
+    background: var(--accent-color);
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #e07d2a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Result Section */
+.result-container {
+    background: rgba(44, 120, 115, 0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+#result-text {
+    font-weight: 500;
+    color: var(--dark-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Footer Styles */
+footer {
+    background: var(--primary-color); /* Matches header gradient */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    margin-top: 2rem;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.social-links {
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.social-links i {
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    button {
+        justify-content: center;
+    }
+}
+
+/* Mode selector */
+.mode-selector {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  .mode-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dark-color);
+  }
+  
+  .mode-btn.active {
+    border-bottom: 3px solid var(--accent-color);
+    color: var(--primary-color);
+  }
+  
+  /* Quiz mode */
+  .quiz-container {
+    background: rgba(111, 185, 143, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  #quiz-tests {
+    margin: 15px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+  }
+  
+  #quiz-tests span {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  #guess-input {
+    padding: 10px;
+    width: 300px;
+    max-width: 100%;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  /* Touch targets */
+button, .test-option, .quiz-option {
+    min-height: 44px; /* Recommended minimum touch target size */
+    touch-action: manipulation; /* Disables double-tap zoom */
+  }
+  
+  /* Larger tap targets for mobile */
+  @media (max-width: 768px) {
+    .test-btn {
+      padding: 0.5rem 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .quiz-option {
+      padding: 1rem;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Mobile viewport fixes */
+body, html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+  
+  /* Header full-width fix */
+  .bio-calculator header, .app-nav {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 1rem 0;
+  }
+  
+  /* Main content full-width */
+  main {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  /* Sections stretching full width */
+  section, .quiz-container, .test-category, .result-container {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  /* Footer full-width fix */
+  footer, .app-footer {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 1rem 0;
+  }
+  
+  /* Smaller mobile devices */
+  @media (max-width: 480px) {
+    /* Header */
+    .header-content h1 {
+      font-size: 1.5rem;
+    }
+    
+    /* Test options */
+    .test-option {
+      margin-right: 0.5rem;
+    }
+    
+    .test-btn {
+      padding: 0.2rem 0.6rem;
+    }
+    
+    /* Quiz options */
+    .quiz-options {
+      grid-template-columns: 1fr;
+    }
+    
+    /* Result text */
+    #result-text {
+      font-size: 0.9rem;
+    }
+    
+    /* Hide some decorative elements */
+    .bio-calculator header::before {
+      display: none;
+    }
+  }
+
+/* Mobile tool cards */
+@media (max-width: 768px) {
+    .tool-cards {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+  
+    .tool-card {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 1.5rem 1rem;
+    }
+  
+    .tool-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    .tool-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .tool-card p {
+      font-size: 0.85rem;
+    }
+  }
+
+ /* Extra small devices (phones) */
+@media (max-width: 480px) {
+    .nav-links {
+      gap: 0.1rem;
+    }
+  
+    .nav-links button {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.2rem;
+    }
+  
+    .tool-card {
+      padding: 1.2rem 0.8rem;
+    }
+  
+    .tool-icon {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* Mobile form inputs */
+@media (max-width: 768px) {
+    input[type="radio"], 
+    input[type="checkbox"] {
+      width: 28px;
+      height: 28px;
+    }
+    
+    fieldset {
+      padding: 1rem;
+    }
+    
+    legend {
+      font-size: 1rem;
+    }
+  }
+
+  /* Performance optimizations */
+* {
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
+    box-sizing: border-box; /* Better sizing calculations */
+  }
+  
+  body {
+    overscroll-behavior-y: contain; /* Prevent pull-to-refresh */
+  }
+  
+  /* Hardware acceleration for animations */
+  button, .tool-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Ensure proper touch targets */
+button, .tool-card {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Optimize form layout for mobile */
+  @media (max-width: 768px) {
+    form {
+      grid-template-columns: 1fr !important;
+    }
+    
+    .button-group {
+      flex-direction: column;
+    }
+    
+    button {
+      width: 100%;
+      margin: 0.25rem 0;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .app-nav {
+      padding: 0.5rem 1rem !important;
+      flex-direction: row !important; /* Changed from column to row */
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .nav-brand {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+  
+    .nav-brand svg {
+      font-size: 1.5rem;
+      margin-right: 8px;
+    }
+  
+    .nav-brand span {
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+  
+    .nav-links {
+      flex: 2;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  
+    .nav-links button {
+      padding: 0.5rem 0.5rem !important;
+      font-size: 0.8rem !important;
+      min-width: auto;
+      margin: 0 2px;
+    }
+  
+    .nav-links button.active {
+      background: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .tool-card {
+      padding: 1.25rem 0.75rem !important;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .tool-card h3 {
+      font-size: 1.1rem !important;
+      line-height: 1.3;
+      margin: 0 0 0.5rem 0 !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+  
+    .tool-card p {
+      font-size: 0.85rem !important;
+      line-height: 1.4;
+      margin: 0 !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-grow: 1;
+    }
+  
+    .tool-icon {
+      font-size: 2rem !important;
+      margin-bottom: 0.75rem !important;
+    }
+
+    .header-content {
+      padding: 0 1rem !important;
+    }
+  
+    /* Ensure cards don't overflow */
+    .tool-cards {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 0.5rem !important;
+    }
+  
+    /* Prevent text zoom on input focus */
+    input, select, textarea, button {
+      font-size: 16px !important;
+      max-height: 3em;
+    }
+  
+    /* Fix active state visibility */
+    .nav-links button.active {
+      position: relative;
+    }
+  
+    .nav-links button.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: white;
+    }
+    
+    .app-header h1 {
+      font-size: 1.5rem !important;
+      padding: 0 0.5rem;
+      line-height: 1.2;
+    }
+  
+    .subtitle {
+      font-size: 0.85rem !important;
+      padding: 0 0.5rem;
+    }
+  
+    /* Main content area */
+    .app-main {
+      padding: 0.5rem !important;
+    }
+  
+    /* Calculator specific fixes */
+    .test-btn {
+      padding: 0.6rem 0.8rem !important;
+      font-size: 0.9rem !important;
+    }
+  
+    fieldset {
+      padding: 0.5rem !important;
+    }
+  
+    legend {
+      font-size: 0.9rem !important;
+    }
+  }
+  
+  /* Form elements */
+  input, select, textarea, button {
+    font-size: 16px !important; /* Prevent iOS zoom */
+    min-height: 48px !important;
+  }
+  
+  /* Calculator specific */
+  .test-group {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .test-btn {
+    padding: 0.6rem 1rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Navigation */
+  .app-nav {
+    flex-direction: column;
+    padding: 0.5rem !important;
+    padding: 0.5rem !important;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links {
+    width: 100%;
+    margin-top: 0.5rem;
+    justify-content: space-around;
+  }
+  
+  .nav-links button {
+    padding: 0.5rem !important;
+    font-size: 0.9rem !important;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  /* Results section */
+  .result-container {
+    padding: 1rem !important;
+  }
+  
+  /* Quiz options */
+  .quiz-options {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .quiz-option {
+    padding: 1rem !important;
+  }
+  
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .footer-about, 
+  .footer-socials, 
+  .footer-roadmap {
+    padding: 1rem !important;
+  }
+
+/* Additional touch target optimizations */
+@media (pointer: coarse) {
+  button, .test-btn, .quiz-option, .tool-card {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  input[type="checkbox"], 
+  input[type="radio"] {
+    width: 24px;
+    height: 24px;
+  }
+}
