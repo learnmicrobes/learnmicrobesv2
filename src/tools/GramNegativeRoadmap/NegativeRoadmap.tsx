@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { gramPositiveRoadmap } from './data';
+import { gramNegativeRoadmap } from './gnrdata';
 import ToolBox from '../../components/ToolBox/ToolBox';
-import './Positive.css';
+import './Negative.css';
 
-const PositiveRoadmap: React.FC = () => {
+const NegativeRoadmap: React.FC = () => {
   const [currentStepId, setCurrentStepId] = useState('start');
   const [history, setHistory] = useState<string[]>(['start']);
   const [currentConclusion, setCurrentConclusion] = useState('');
   const navigate = useNavigate();
 
-  const currentStep = gramPositiveRoadmap.find(step => step.id === currentStepId) || gramPositiveRoadmap[0];
+  const currentStep = gramNegativeRoadmap.find(step => step.id === currentStepId) || gramNegativeRoadmap[0];
 
   const handleOptionSelect = (nextStep: string | null, conclusion?: string) => {
     if (nextStep) {
@@ -59,8 +59,8 @@ const PositiveRoadmap: React.FC = () => {
 
   return (
     <ToolBox
-      title="Gram Positive Identification"
-      icon="🟣"
+      title="Gram Negative Identification"
+      icon="🔴" // Red icon for negative
       onClose={() => navigate('/')}
     >
       <div className="roadmap-container">
@@ -109,4 +109,4 @@ const PositiveRoadmap: React.FC = () => {
   );
 };
 
-export default PositiveRoadmap;
+export default NegativeRoadmap;

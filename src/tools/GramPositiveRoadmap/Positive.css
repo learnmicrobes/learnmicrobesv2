@@ -1,133 +1,157 @@
-/* tools/GramPositiveRoadmap/Roadmap.css */
+/* Consistent with Enterobacteriaceae Identification Tool */
+:root {
+  --primary-color: #2c7873;
+  --secondary-color: #6fb98f;
+  --accent-color: #ff9a3c;
+  --dark-color: #2c3e50;
+  --light-color: #f4f9f4;
+}
+
 .roadmap-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 1.5rem;
 }
 
-.roadmap-header {
+/* Question Styling */
+.current-question {
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-.roadmap-header h2 {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.roadmap-header p {
-  color: var(--dark-color);
-  opacity: 0.8;
-}
-
-.roadmap-card {
-  background: white;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.step-question h3 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.explanation {
-  font-size: 0.9rem;
-  color: var(--dark-color);
-  opacity: 0.8;
   margin-bottom: 1.5rem;
-  padding: 0.8rem;
+}
+
+.current-question h3 {
+  color: var(--dark-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.8rem 1.2rem;
   background: rgba(111, 185, 143, 0.1);
-  border-left: 3px solid var(--secondary-color);
-  border-radius: 0 5px 5px 0;
+  border-radius: 8px;
+  display: inline-block;
 }
 
-.step-options {
-  display: flex;
-  flex-direction: column;
+/* Options Container - Fixed Layout */
+.options-container {
+  display: grid;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
-.option-btn {
-  padding: 1rem;
-  border: none;
-  border-radius: 6px;
-  background: var(--primary-color);
-  color: white;
-  font-size: 1rem;
+.binary-layout {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-layout {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.option-card {
+  padding: 1.2rem;
+  border-radius: 8px;
+  background: white;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.option-btn:hover {
-  background: #235f5a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.back-btn,
-.reset-btn {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--accent-color);
-  color: white;
-  margin-top: 1rem;
-}
-
-.back-btn:hover,
-.reset-btn:hover {
-  background: #e07d2a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.conclusion {
+  transition: all 0.2s ease;
+  border: 1px solid rgba(44, 120, 115, 0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   text-align: center;
-  padding: 2rem 0;
 }
 
-.conclusion h3 {
+.option-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: var(--accent-color);
+}
+
+.option-card h3 {
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.option-tests {
+  color: var(--dark-color);
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Conclusion Panel */
+.conclusion-panel {
+  background: rgba(111, 185, 143, 0.08);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.conclusion-panel h3 {
+  color: var(--primary-color);
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
 }
 
 .result-text {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--secondary-color);
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: rgba(111, 185, 143, 0.1);
-  border-radius: 8px;
+  margin: 0.5rem 0;
+  padding: 0.8rem 1.5rem;
+  background: white;
+  border-radius: 50px;
+  display: inline-block;
 }
 
-/* Responsive styles */
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.nav-btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.back-btn {
+  background: rgba(44, 120, 115, 0.1);
+  color: var(--primary-color);
+}
+
+.back-btn:hover {
+  background: rgba(44, 120, 115, 0.2);
+}
+
+.next-btn {
+  background: var(--accent-color);
+  color: white;
+}
+
+.next-btn:hover {
+  background: #e07d2a;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .roadmap-container {
     padding: 1rem;
   }
 
-  .roadmap-card {
-    padding: 1.5rem;
+  .options-container {
+    grid-template-columns: 1fr !important;
   }
 
-  .step-question h3 {
-    font-size: 1.1rem;
+  .nav-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .option-btn {
-    padding: 0.8rem;
+  .nav-btn {
+    width: 100%;
   }
 }

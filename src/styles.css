@@ -260,11 +260,11 @@ footer p {
     form {
         grid-template-columns: 1fr;
     }
-    
+
     .button-group {
         flex-direction: column;
     }
-    
+
     button {
         justify-content: center;
     }
@@ -276,7 +276,7 @@ footer p {
     margin-bottom: 20px;
     border-bottom: 2px solid var(--primary-color);
   }
-  
+
   .mode-btn {
     padding: 10px 20px;
     background: none;
@@ -285,12 +285,12 @@ footer p {
     font-weight: 600;
     color: var(--dark-color);
   }
-  
+
   .mode-btn.active {
     border-bottom: 3px solid var(--accent-color);
     color: var(--primary-color);
   }
-  
+
   /* Quiz mode */
   .quiz-container {
     background: rgba(111, 185, 143, 0.1);
@@ -298,14 +298,14 @@ footer p {
     border-radius: 10px;
     margin-bottom: 15px;
   }
-  
+
   #quiz-tests {
     margin: 15px 0;
     padding: 15px;
     background: white;
     border-radius: 8px;
   }
-  
+
   #quiz-tests span {
     display: inline-block;
     background: var(--primary-color);
@@ -315,7 +315,7 @@ footer p {
     border-radius: 20px;
     font-size: 0.9rem;
   }
-  
+
   #guess-input {
     padding: 10px;
     width: 300px;
@@ -330,14 +330,14 @@ button, .test-option, .quiz-option {
     min-height: 44px; /* Recommended minimum touch target size */
     touch-action: manipulation; /* Disables double-tap zoom */
   }
-  
+
   /* Larger tap targets for mobile */
   @media (max-width: 768px) {
     .test-btn {
       padding: 0.5rem 1rem;
       font-size: 1.1rem;
     }
-    
+
     .quiz-option {
       padding: 1rem;
     }
@@ -355,109 +355,219 @@ button, .test-option, .quiz-option {
     .bio-calculator {
       padding: 0 10px;
     }
-    
+
     .header-content h1 {
       font-size: 1.8rem;
     }
-    
+
     /* Mode selector */
     .mode-selector {
       flex-direction: column;
       gap: 0.5rem;
     }
-    
+
     .mode-btn {
       width: 100%;
     }
-    
+
     /* Test groups */
     .test-group {
       grid-template-columns: 1fr;
     }
-    
+
     /* Calculator sections */
     section {
       padding: 1rem;
       margin: 1rem 0;
     }
-    
+
     /* Quiz container */
     .quiz-container {
       padding: 1rem;
     }
-    
+
     /* Button groups */
     .button-group, .quiz-actions {
       flex-direction: column;
       gap: 0.8rem;
     }
-    
-    .button-group button, 
+
+    .button-group button,
     .quiz-actions button {
       width: 100%;
       justify-content: center;
     }
-    
+
     /* Tool cards on home page */
     .tool-cards {
       flex-direction: column;
       align-items: center;
     }
-    
+
     .tool-card {
       width: 100%;
       max-width: none;
     }
-    
+
     /* Navigation */
     .app-nav {
       flex-direction: column;
       padding: 1rem;
     }
-    
+
     .nav-links {
       margin-top: 1rem;
       flex-direction: column;
       width: 100%;
     }
-    
+
     .nav-links button {
       width: 100%;
       justify-content: center;
     }
-    
+
     /* Footer */
     .footer-grid {
       grid-template-columns: 1fr;
     }
   }
-  
+
+  /* Gram Positive Roadmap Styles */
+.roadmap-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.roadmap-step {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.roadmap-step h3 {
+  color: #6fb98f;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.roadmap-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.roadmap-option {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.roadmap-option:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.option-tests {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+  background: rgba(108, 117, 125, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.roadmap-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.roadmap-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #6fb98f;
+  color: white;
+  cursor: pointer;
+}
+
+.roadmap-actions button:disabled {
+  background: #ced4da;
+  cursor: not-allowed;
+}
+
+.roadmap-conclusion {
+  background: #f8f9fa;
+  border-left: 4px solid #6fb98f;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.roadmap-conclusion h4 {
+  margin-top: 0;
+  color: #2c7873;
+}
+
+.roadmap-image {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.roadmap-image img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .roadmap-step {
+    padding: 1rem;
+  }
+
+  .roadmap-option {
+    padding: 0.8rem;
+  }
+}
+
   /* Smaller mobile devices */
   @media (max-width: 480px) {
     /* Header */
     .header-content h1 {
       font-size: 1.5rem;
     }
-    
+
     /* Test options */
     .test-option {
       margin-right: 0.5rem;
     }
-    
+
     .test-btn {
       padding: 0.2rem 0.6rem;
     }
-    
+
     /* Quiz options */
     .quiz-options {
       grid-template-columns: 1fr;
     }
-    
+
     /* Result text */
     #result-text {
       font-size: 0.9rem;
     }
-    
+
     /* Hide some decorative elements */
     .bio-calculator header::before {
       display: none;
@@ -466,16 +576,16 @@ button, .test-option, .quiz-option {
 
   /* Mobile form inputs */
 @media (max-width: 768px) {
-    input[type="radio"], 
+    input[type="radio"],
     input[type="checkbox"] {
       width: 28px;
       height: 28px;
     }
-    
+
     fieldset {
       padding: 1rem;
     }
-    
+
     legend {
       font-size: 1rem;
     }
@@ -486,11 +596,11 @@ button, .test-option, .quiz-option {
     -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
     box-sizing: border-box; /* Better sizing calculations */
   }
-  
+
   body {
     overscroll-behavior-y: contain; /* Prevent pull-to-refresh */
   }
-  
+
   /* Hardware acceleration for animations */
   button, .tool-card {
     transform: translateZ(0);

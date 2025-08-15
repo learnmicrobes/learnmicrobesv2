@@ -8,7 +8,7 @@ export default function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
-  
+
 // Handle browser back/forward
 useEffect(() => {
   const handlePopState = () => {
@@ -22,7 +22,7 @@ const handleToolChange = (tool: string | null) => {
   if (!tool) {
     navigate('/');
   } else {
-    navigate(tool.toLowerCase().replace(' ', '-'));
+    navigate(tool.toLowerCase().replace(/\s+/g, '-'));
   }
 };
 
@@ -30,18 +30,18 @@ useEffect(() => {
   const checkIfMobile = () => {
     setIsMobile(window.innerWidth <= 768);
   };
-  
+
   checkIfMobile();
   window.addEventListener('resize', checkIfMobile);
-  
+
   return () => {
     window.removeEventListener('resize', checkIfMobile);
   };
 }, []);
 
 // Get active tool from URL
-const activeTool = location.pathname.includes('biochemical-calculator') 
-? 'Biochemical Calculator' 
+const activeTool = location.pathname.includes('biochemical-calculator')
+? 'Biochemical Calculator'
 : location.pathname.includes('gram-positive-roadmap')
   ? 'Gram Positive Roadmap'
   : location.pathname.includes('gram-negative-roadmap')
@@ -56,15 +56,15 @@ const activeTool = location.pathname.includes('biochemical-calculator')
     <FontAwesomeIcon icon={faMicroscope} />
     {!isMobile && <span>Learn Microbes</span>}
   </div>
-          
+
           <div className="nav-links">
-            <button 
+            <button
               className={!activeTool ? 'active' : ''}
               onClick={() => handleToolChange(null)}
             >
               <FontAwesomeIcon icon={faHome} /> Home
             </button>
-            <button 
+            <button
               className={activeTool === 'Biochemical Calculator' ? 'active' : ''}
               onClick={() => handleToolChange('Biochemical Calculator')}
             >
@@ -78,7 +78,7 @@ const activeTool = location.pathname.includes('biochemical-calculator')
             </button>
           </div>
         </nav>
-  
+
         <main className="app-main">
           {/* This will render either:
              - The home page content (when path is '/')
@@ -87,9 +87,9 @@ const activeTool = location.pathname.includes('biochemical-calculator')
             <div className="home-page">
               <h2>Welcome to Learn Microbes</h2>
               <p>Select a tool to get started:</p>
-              
+
               <div className="tool-cards">
-                <button 
+                <button
                   className="tool-card calculator"
                   onClick={() => handleToolChange('Biochemical Calculator')}
                 >
@@ -97,28 +97,30 @@ const activeTool = location.pathname.includes('biochemical-calculator')
                   <h3>Enterics Biochemical Calculator</h3>
                   <p>Identify Enteric organisms based on 24 biochemical tests</p>
                 </button>
-                
-                <button 
+
+                <button
                   className="tool-card gram-positive"
                   onClick={() => handleToolChange('Gram Positive Roadmap')}
                 >
                   <span className="tool-icon">🟣</span>
                   <h3>Gram Positive Roadmap</h3>
-                  <p>Step-by-step identification guide (Coming Soon)</p>
+                  <p>Step-by-step identification guide</p>
                 </button>
-                
-                <button 
+
+                <button
                   className="tool-card gram-negative"
                   onClick={() => handleToolChange('Gram Negative Roadmap')}
                 >
                   <span className="tool-icon">🔴</span>
                   <h3>Gram Negative Roadmap</h3>
-                  <p>Step-by-step identification guide (Coming Soon)</p>
+                  <p>Step-by-step identification guide</p>
                 </button>
               </div>
             </div>
           ) : (
+             <>
             <Outlet />
+            </>
           )}
         </main>
 
@@ -129,7 +131,7 @@ const activeTool = location.pathname.includes('biochemical-calculator')
               <h3>About This Project</h3>
               <p>This free tool was created by a microbiology lab technologist to help students and professionals with bacterial identification. It's based on standard biochemical test patterns used in clinical laboratories.</p>
             </div>
-            
+
             <div className="footer-socials">
               <h3>Connect With Me</h3>
               <div className="social-icons">
@@ -141,7 +143,7 @@ const activeTool = location.pathname.includes('biochemical-calculator')
                 </a>
               </div>
             </div>
-            
+
             <div className="footer-roadmap">
               <h3>What's Coming Next</h3>
               <ul>
@@ -153,7 +155,7 @@ const activeTool = location.pathname.includes('biochemical-calculator')
               </ul>
             </div>
           </div>
-          
+
           <div className="footer-copyright">
             <p>&copy; 2025 LearnMicrobes.com | Made for educational purposes</p>
           </div>

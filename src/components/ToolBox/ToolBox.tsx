@@ -6,12 +6,26 @@ interface ToolBoxProps {
   icon: string;
   children: React.ReactNode;
   onClose: () => void;
+  showBackButton?: boolean;
+  onBack?: () => void;
 }
 
-const ToolBox: React.FC<ToolBoxProps> = ({ title, icon, children, onClose }) => {
+const ToolBox: React.FC<ToolBoxProps> = ({
+  title,
+  icon,
+  children,
+  onClose,
+  showBackButton = false,
+  onBack
+}) => {
   return (
     <div className="tool-box">
       <div className="tool-box-header">
+        {showBackButton && (
+          <button className="back-btn" onClick={onBack}>
+            ←
+          </button>
+        )}
         <h2>
           <span className="tool-icon">{icon}</span>
           {title}
